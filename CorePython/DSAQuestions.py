@@ -27,4 +27,19 @@ def first_non_repeating(s):
     return None
 
 print(first_non_repeating("swiss"))  # Output: w
-print(first_non_repeating("aabbcc"))#Output:None
+print(first_non_repeating("aabbcc"))#Output:None 
+
+# 1. Check if two strings have common characters
+str1 = "hello"
+str2 = "world"
+common = not set(str1).isdisjoint(set(str2))
+print(f"Do the strings have common characters? {common}")  # Output: True
+
+# 2. Convert a list of tuples to a dictionary
+lst = [("a", 1), ("b", 2), ("c", 3)]
+dictionary = dict(lst)
+print(f"Dictionary: {dictionary}")  # Output: {'a': 1, 'b': 2, 'c': 3}
+
+# 3. Sort a dictionary by its values in ascending order
+sorted_dict = dict(sorted(dictionary.items(), key=lambda x: x[1]))
+print(f"Sorted Dictionary: {sorted_dict}")  # Output: {'b': 1, 'c': 2, 'a': 3}
