@@ -125,7 +125,31 @@ def __init__(self):
 
 '
 
-              #Abstraction: abstracrtion i
+            
+        #Abstraction: abstracrtion is a process of hiding the implementation details and showing only the functionality to the user.
+        #Abstraction is achieved by using abstract class and interface.
+        details are hidden
+        #Abstract class:
+        #An abstract class is a class that contains one or more abstract methods.
+        #An abstract method is a method that is declared but not implemented.
+       #syntax:
+        Data Abstraction :
+        class A:
+            def show(self):
+                pass
+        class B(A):
+            def show(self):
+                print("showing")  
+        b=B()
+        b.show()
+        #output: showing
+        
+       
+       
+       
+       
+       
+       
        #Inheritance: 
        # inheritance is a mechanism in which one class acquires the property of another class.
        syntax:

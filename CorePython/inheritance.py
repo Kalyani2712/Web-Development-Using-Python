@@ -82,27 +82,34 @@
 
 
 #Heirarchical Inheritance:
-# class Vehicle:
-#     def move(self):
-#         print("Vehicle moving")
 
-# class Car(Vehicle):
-#     def start(self):
-#         print("Car starting")
+class Vehicle:
+    def start(self):
+        print("Vehicle started")
 
-# class Bike(Vehicle):
-#     def stop(self):
-#         print("Bike stopping")
+    def stop(self):
+        print("Vehicle stopped")
 
-# c = Car()
-# c.move()
-# c.start()
-# b = Bike()
-# b.move()
-# b.stop()
-# b.start()  # AttributeError: 'Bike' object has no attribute 'start'   
+class Car(Vehicle):
+    def open_doors(self):
+        print(" car: Opening  doors")
+
+class Bike(Vehicle):
+    def kick_start(self):
+        print(" bike : Kick started")
+
+c = Car()
+c.start()
+c.open_doors()
+c.stop()
+
+b = Bike()
+b.start()
+b.kick_start()
+b.stop()
 
 
+    
 
 
 
@@ -110,21 +117,48 @@
 
 
 #self and super() in inheritance:
-class person:
-    def __init__(self,name):
-        self.name=name
+# class person:
+#     def __init__(self,name):
+#         self.name=name
         
-    def display(self):
-        print("Name:",self.name)
-        
+#     def display(self):
+#         print("Name:", self.name)
+#         print("Color:", self.color)
+     
+#     def drive(self):
+#         print("Vehicle is driving")
+     
+#     def stop(self):
+#         print("Vehicle has stopped")
+     
+#     def turn(self):
+#         print("Vehicle is turning")
+     
+# class Car(Vehicle):
+#     def __init__(self, name, color, doors):
+#         super().__init__(name, color)
+#         self.doors = doors
+     
+#     def open_doors(self):
+#         print("Opening", self.doors, "doors")
+     
+# class Bike(Vehicle):
+#     def __init__(self, name, color, gears):
+#         super().__init__(name, color)
+#         self.gears = gears
+     
+#     def gear_shift(self):
+#         print("Shifting gears to", self.gears)
+#         print("Name:",self.name)
 
-class Employee(person):
-    def __init__(self,name,emp_id):
-       super().__init__(name)
-       self.emp_id=emp_id
-    def display(self):
-        print("Name:",self.name)
-        print(f"Emp_id: {self.emp_id}")
+     
+# class Employee(person):
+#     def __init__(self,name,emp_id):
+#        super().__init__(name)
+#        self.emp_id=emp_id
+#     def display(self):
+#         print("Name:",self.name)
+#         print(f"Emp_id: {self.emp_id}")
 
-e=Employee("kalyani",101)
-e.display()
+# e=Employee("kalyani",101)
+# e.display()
