@@ -131,7 +131,17 @@ def __init__(self):
         details are hidden
         #Abstract class:
         #An abstract class is a class that contains one or more abstract methods.
-        #An abstract method is a method that is declared but not implemented.
+        cannot be instanciated   means object cannot be created of abstract class directly.
+       it work as a template for child class.
+       can a abstract class can have concrete methods.?
+         yes ,because abstract class can have both abstract and concrete methods.
+         concrete methods are those methods which have implementation(body).
+
+         #An abstract method is a method that is declared but not implemented.
+         @abstractmethod decorator is used to declare a method as abstract.
+         must be implemented in child class.
+            #Abstract class is created by importing ABC class from abc module:
+        from abc import ABC, abstractmethod : abstract base class
        #syntax:
         Data Abstraction :
         class A:
