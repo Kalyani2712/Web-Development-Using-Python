@@ -99,17 +99,17 @@ Exception class:
 
 #using sys module:
 
-import sys
-try:
-    num1=int(input("Enter first number:"))
-    num2=int(input("Enter second number:"))
-    div=num1/num2
-    print(div)
-except Exception as e:
-    print(sys.exc_info())    
-    print(sys.exc_info()[0])
+# import sys
+# try:
+#     num1=int(input("Enter first number:"))
+#     num2=int(input("Enter second number:"))
+#     div=num1/num2
+#     print(div)
+# except Exception as e:
+#     print(sys.exc_info())    
+#     print(sys.exc_info()[0])
     
-    print("Division by zero is not allowed")
+#     print("Division by zero is not allowed")
 
 #output: Enter first number:10
 #Enter second number:0
@@ -120,6 +120,14 @@ except Exception as e:
 #when finally block is not executed?
 #when exception is not raised
 #when we use exit() function in try block
+#when we use os._exit() function in try block
+#when we use sys.exit() function in try block
+#when we use return statement in try block
+# when we use break statement in try block
+#fatal interpreter error or power failure
+#when we use infinite loop in try block
+
+
 
 #Types of exceptions:
 '''
@@ -136,4 +144,132 @@ except Exception as e:
     - KeyboardInterrupt
 2. User-defined Exceptions:
     - CustomException
+
+finally: 
+- finally block is used to execute the code no matter what.
+ if exception is raised or not. it will execute the code.
+ use for clean up Resources.(resource closing)
+
+ 
 '''
+
+# try: 
+#    file=open("example.txt","r")
+#    print(file.read())
+# except FileNotFoundError:
+#        print("File not found")
+# finally:
+#     # print("This is a finally block")
+#     file.close()
+
+ 
+
+
+# try:
+#         file = open("file.txt", "r")
+#         content = file.read()
+#         print(content) 
+# except FileNotFoundError as  e :
+#         print("File Not Found")
+# finally:
+#         # Closing the resources
+#         file.close()
+
+
+# def read_file():
+#     try:
+#         with open("file.txt", "r") as file:
+#             content = file.read()
+#             return content  # Return the content of the file
+#     except FileNotFoundError as e:
+#         print("File Not Found:", e)
+#         return None  # Return None if the file is not found
+#     except Exception as e:
+#         print("An error occurred:", e)
+#         return None  # Handle other exceptions gracefully
+#     finally:
+#         file.close()
+#         print("File closed") 
+
+
+#In Loop:
+
+# import os
+# try:
+#             while True:
+#                 pass
+# except FileNotFoundError:
+#                 print("An error occurred:", e)
+# finally:    
+#             print("This is finally block")  
+
+
+        
+
+#Raise:
+'''
+- raise keyword is used to raise an exception.
+- we can raise an exception using raise keyword.
+- raise keyword is used to raise an exception.
+- raise keyword is used to raise a user-defined exception.
+- raise keyword is used to raise a built-in exception.
+- raise keyword is used to raise an exception with a message.
+- raise keyword is used to raise an exception with an error code.
+
+syntax:
+raise ExceptionClassName("Error message")
+'''
+# age=int(input("Enter your age:"))
+# try:
+#     if age<18:
+#         raise  ValueError("You are not eligible to vote")
+#     else:
+#         print("You are eligible to vote")
+# except ValueError as e:
+#     print(e)
+    #output: Enter your age:10
+    #You are not eligible to vote
+
+'''
+create a custom exception:
+create our own exception by inheriting Exception class.
+steps:
+1. create a class that inherits Exception class.
+2. Raise UAE for a particular condition in try block.
+try:
+    if condition:
+        raise CustomException("Error message")
+        for eg , 
+        try :
+            if age<18:
+                raise CustomException("You are not eligible to vote")
+        except CustomException as e:
+            print(e)
+            #output: You are not eligible to vote
+3. Handle the exception in except block.
+except Exception as e:
+    print(e)
+
+
+ '''
+#Code :
+
+# class UnderAgeException(Exception):
+#     pass
+# class main:
+#     age=int(input("Enter your age:"))
+#     try:
+#         if age<18:
+#             raise UnderAgeException("You are not eligible to vote")
+#         else: 
+#             print("You are eligible to vote")
+#     except UnderAgeException as e:
+#         print(e)
+
+#output: Enter your age:10
+#You are not eligible to vote
+
+
+#Seven Division Error:
+#seven division error:
+
