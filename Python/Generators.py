@@ -114,3 +114,7 @@ produce number one by one therefore it is more memory efficient
 2.Creates a copy of the generator in memory
 we use Generator when i dont want to store the entire list in memory and can process them one by one
 '''
+
+
+
+
