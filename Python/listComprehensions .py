@@ -90,3 +90,27 @@ print(dict)
 #table of 2
 dict = {x*y for x in range(1,11) for y in range(1,11)}
 print(dict)
+
+# 3. Transforming an Existing Dictionary
+# Double the values of an existing dictionary:
+
+original = {"a": 1, "b": 2, "c": 3}
+doubled = {k: v * 2 for k, v in original.items()}
+print(doubled)
+
+
+# 4. Swapping Keys and Values
+# Create a dictionary by swapping keys and values:
+original = {"a": 1, "b": 2, "c": 3}
+swapped = {v: k for k, v in original.items()}
+print(swapped)
+
+# 5. From Two Lists
+keys = ["name", "age", "city"]
+values = ["Alice", 25, "New York"]
+combined = {k: v for k, v in zip(keys, values)}
+print(combined)
+
+# Nested Dictionary Comprehension
+table = {x: {y: x * y for y in range(1, 6)} for x in range(1, 4)}
+print(table)
