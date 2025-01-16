@@ -74,17 +74,38 @@ def decorator_name(function):
 
 
 #Advanced Decorators :
-def repeat(times):
-    def decorator(func):
-        def wrapper(*args, **kwargs):
-            for _ in range(times):
-                result = func(*args, **kwargs)
-            return result
-        return wrapper
-    return decorator
+# def repeat(times):
+#     def decorator(func):
+#         def wrapper(*args, **kwargs):
+#             for _ in range(times):
+#                 result = func(*args, **kwargs)
+#             return result
+#         return wrapper
+#     return decorator
 
-@repeat(3)
-def greet(name):
-    print(f"Hello {name}")
+# @repeat(3)
+# def greet(name):
+#     print(f"Hello {name}")
 
-greet("Kalyani")
+# greet("Kalyani") 
+
+
+#Create a decorator whis show how much time it takes to execute the function:
+
+
+import time
+
+def timer(func):
+    def wrapper(*args, **kwargs):
+        start_time = time.time()
+        result = func(*args, **kwargs)
+        end_time = time.time()
+        print(f"Function {func.__name__} took {end_time - start_time : .4f} seconds to execute.")
+        return result
+    return wrapper  
+
+@timer
+def my_function():
+    time.sleep(5)
+
+my_function()
