@@ -52,25 +52,25 @@ def decorator_name(function):
 # create 2 decorator having same functionality:
 
 
-# def decorator1(func):
-#     def wrapper():
-#         print("decorator1")
-#         func()  
-#         print("decorator2")  
-#     return wrapper  
+def decorator1(func):
+    def wrapper():
+        print("decorator1")
+        func()  
+        print("decorator2")  
+    return wrapper  
 
-# def decorator2(func):    
-#     def wrapper():
-#         print("decorator3 ")
-#         func()   
-#         print("decorator4") 
-#     return wrapper 
+def decorator2(func):    
+    def wrapper():
+        print("decorator3 ")
+        func()   
+        print("decorator4") 
+    return wrapper 
 
-# @decorator1
-# @decorator2
-# def name_print():
-#     print("My name is kalyani 5")  
-# name_print()
+@decorator1
+@decorator2
+def name_print():
+    print("My name is kalyani 5")  
+name_print()
 
 
 #Advanced Decorators :
@@ -93,19 +93,19 @@ def decorator_name(function):
 #Create a decorator whis show how much time it takes to execute the function:
 
 
-import time
+# import time
 
-def timer(func):
-    def wrapper(*args, **kwargs):
-        start_time = time.time()
-        result = func(*args, **kwargs)
-        end_time = time.time()
-        print(f"Function {func.__name__} took {end_time - start_time : .4f} seconds to execute.")
-        return result
-    return wrapper  
+# def timer(func):
+#     def wrapper(*args, **kwargs):
+#         start_time = time.time()
+#         result = func(*args, **kwargs)
+#         end_time = time.time()
+#         print(f"Function {func.__name__} took {end_time - start_time : .4f} seconds to execute.")
+#         return result
+#     return wrapper  
 
-@timer
-def my_function():
-    time.sleep(5)
+# @timer
+# def my_function():
+#     time.sleep(5)
 
-my_function()
+# my_function()
