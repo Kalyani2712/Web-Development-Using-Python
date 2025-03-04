@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess Board with Checkboxes</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        table {
+            border-collapse: collapse;
+            width: 400px;
+            height: 400px;
+            border: 5px solid black;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        td {
+            width: 50px;
+            height: 50px;
+            text-align: center;
+        }
+        .black {
+            background-color: black;
+        }
+        .white {
+            background-color: white;
+        }
+        input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <table id="chessboard"></table>
+
+    <script>
+        const table = document.getElementById("chessboard");
+        
+        for (let i = 0; i < 8; i++) {
+            let row = document.createElement("tr");
+            for (let j = 0; j < 8; j++) {
+                let cell = document.createElement("td");
+                cell.className = (i + j) % 2 === 0 ? "white" : "black";
+                let checkbox = document.createElement("input");
+                checkbox.type = "checkbox";
+                cell.appendChild(checkbox);
+                row.appendChild(cell);
+            }
+            table.appendChild(row);
+        }
+    </script>
+</body>
+</html>

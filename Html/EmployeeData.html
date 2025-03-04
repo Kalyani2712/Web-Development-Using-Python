@@ -6,81 +6,123 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Employee Info </title>
     <style>
-        .EmployeeData-table{ /*class name*/
-            background-color:cadetblue; /*background color*/
-            margin: auto; /*center the table*/
-            width: 700px; /*width of the table*/
-            height: 500px; /*height of the table*/
-            border: 1px solid black; /*border of the table*/
-            padding: 10px;
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #d7e1ec, #98b4d4);
+            text-align: center;
+            padding: 20px;
         }
-        table{
+
+        .EmployeeData-table {
+            background: white;
+            margin: auto;
+            width: 750px;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3); /* 3D shadow effect */
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .EmployeeData-table:hover {
+            transform: scale(1.03); /* Slight pop-up effect */
+        }
+
+        table {
             font-family: 'Times New Roman', Times, serif;
             width: 100%;
             border-collapse: collapse;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
         }
-        th, td{
-            border: 1px solid black;
-            padding: 10px;
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
             text-align: center;
         }
-        th{
-            background-color: #459eb9;
+
+        th {
+            background: linear-gradient(to right, #459eb9, #25748b);
+            color: white;
+            font-weight: bold;
         }
-        .hd-data{
-            text-align: center;
+
+        /* Dynamic row colors */
+        tbody tr:nth-child(odd) {
+            background-color: #e6f7ff;
         }
-        .odd:hover{
-            background-color: #64dcd8;
+
+        tbody tr:nth-child(even) {
+            background-color: #ccf5e7;
         }
-        .even:hover{
-            background-color: #cde281;
+
+        tbody tr:hover {
+            background-color: #ffe599;
+            transition: background 0.3s ease-in-out;
+        }
+
+        .hd-data {
+            font-size: 24px;
+            color: #2c3e50;
+            text-transform: uppercase;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
     </style>
 </head>
 <body>
     <div class="EmployeeData-table">
-    <h1 class="hd-data">Employee Information Data</h1>
-    <table>
-        <th>EmployeeId</th>
-        <th>EmployeeName</th>
-        <th>EmployeeEmail</th>
-        <th>EmployeePhone</th>
-        <th>Salary </th>
-        <tr class="odd">
-            <td>Emp1</td>
-            <td>John Doe</td>
-            <td>Y2k1V@example.com</td>
-            <td>1234567890</td>
-            <td>10000</td>
-        </tr>
-        <tr class="even" >
-            <td>Emp2</td>
-            <td>Jane Doe</td>
-            <td>znc@example.com</td>
-            <td>1234567890</td> 
-            <td>20000</td>
-        </tr>
-        <tr  class="odd" >
-            <td>Emp3</td>
-            <td>John Smith</td>
-            <td>John@example.com</td>
-            <td>1234567890</td>
-            <td>30000</td>
-        </tr>
-        <tr class="even">
-            <td>Emp4</td>
-            <td>Jane Smith</td>
-            <td>janesmith@example.com</td>
-            <td>1234567890</td>
-            <td>40000</td>
-        </tr>
-        <tr class="odd">
-            <td>Emp5</td>
-            <td>John Doe</td>
-            <td>jonny@example.com</td>
-            <td>1234567890</td>
-            <td>50000</td>
-        </tr>
-        </div>
+        <h1 class="hd-data">Employee Information Data</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Employee ID</th>
+                    <th>Employee Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Salary</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Emp1</td>
+                    <td>John Doe</td>
+                    <td>Y2k1V@example.com</td>
+                    <td>1234567890</td>
+                    <td>$10,000</td>
+                </tr>
+                <tr>
+                    <td>Emp2</td>
+                    <td>Jane Doe</td>
+                    <td>znc@example.com</td>
+                    <td>1234567890</td>
+                    <td>$20,000</td>
+                </tr>
+                <tr>
+                    <td>Emp3</td>
+                    <td>John Smith</td>
+                    <td>John@example.com</td>
+                    <td>1234567890</td>
+                    <td>$30,000</td>
+                </tr>
+                <tr>
+                    <td>Emp4</td>
+                    <td>Jane Smith</td>
+                    <td>janesmith@example.com</td>
+                    <td>1234567890</td>
+                    <td>$40,000</td>
+                </tr>
+                <tr>
+                    <td>Emp5</td>
+                    <td>David Brown</td>
+                    <td>david@example.com</td>
+                    <td>1234567890</td>
+                    <td>$50,000</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </body>
+</html>
